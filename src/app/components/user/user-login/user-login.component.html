@@ -1,0 +1,31 @@
+<mat-card class="card">
+    <mat-card-title>New Product Form</mat-card-title>
+    <mat-card-subtitle>Create your own product</mat-card-subtitle>
+    <mat-card-content>
+
+        <form class="form" [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+            
+            <mat-card class="result">
+
+                <mat-form-field class="full-width" appearance="fill">
+                    <mat-label>Email</mat-label>
+                    <input type="email" formControlName="email" matInput #message maxlength="100" placeholder="Ex. xyz@example.com">
+                </mat-form-field>
+    
+                <mat-form-field class="full-width" appearance="fill">
+                    <mat-label>Password</mat-label>
+                    <input type="Password" formControlName="password" matInput #message maxlength="256" placeholder="Your password">
+                </mat-form-field>
+
+            </mat-card>
+
+            <mat-card-actions>
+                <button type="submit" mat-flat-button color="primary" [disabled]="formGroup.invalid">Connexion</button>
+                <button mat-button (click)="onCancel()">Cancel</button>
+            </mat-card-actions>
+
+        </form>
+
+    </mat-card-content>
+   
+</mat-card>
